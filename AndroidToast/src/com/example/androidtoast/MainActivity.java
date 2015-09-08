@@ -57,6 +57,10 @@ public class MainActivity extends Activity {
 		case R.id.action_setBbdd:
 			Intent i2 = new Intent(this,ActivityBbdd.class);
 			startActivity(i2);
+			break;
+		case R.id.action_home:
+			Intent i3 = new Intent(this,MainActivity.class);
+			startActivity(i3);
 			break;	
 		}
 		

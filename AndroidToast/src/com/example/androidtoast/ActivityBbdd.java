@@ -4,11 +4,14 @@
 package com.example.androidtoast;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,6 +32,7 @@ protected void onCreate(Bundle savedInstanceState) {
 	// TODO Auto-generated method stub
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_main2);
+	/*
 	Bbdd bbdd = new Bbdd(this, "bbdd_android", null, 1);
 	
 	SQLiteDatabase sqld =bbdd.getWritableDatabase(); //debemos comprobar que sea !null 
@@ -40,7 +44,7 @@ protected void onCreate(Bundle savedInstanceState) {
 			sqld.execSQL("INSERT INTO Usuarios (codigo,nombre) VALUES"+"("+i+",'"+set_nombre+"');");
 		}
 		sqld.close();
-	}
+	}*/
 	/*
 	TextView txtcontactos = (TextView) findViewById(R.id.textView2);
 	Bbdd usdbh = new Bbdd(this, "bbdd_android", null, 1);
@@ -68,7 +72,43 @@ protected void onCreate(Bundle savedInstanceState) {
 	*/
 	
 }
+@Override
+public boolean onCreateOptionsMenu(Menu menu) {
+	// Inflate the menu; this adds items to the action bar if it is present.
+	getMenuInflater().inflate(R.menu.main, menu);
+	return true;
+}
 
+@Override
+public boolean onOptionsItemSelected(MenuItem item) {
+	// Handle action bar item clicks here. The action bar will
+	// automatically handle clicks on the Home/Up button, so long
+	// as you specify a parent activity in AndroidManifest.xml.
+	int id = item.getItemId();
+	if (id == R.id.action_settings) {
+		return true;
+	}
+	
+	
+	switch (id) {
+	case R.id.action_getBbdd:
+		Intent i1 = new Intent(this,ActivityReadBbdd.class);
+		startActivity(i1);
+		break;
+	case R.id.action_setBbdd:
+		Intent i2 = new Intent(this,ActivityBbdd.class);
+		startActivity(i2);
+		break;
+	case R.id.action_home:
+		Intent i3 = new Intent(this,MainActivity.class);
+		startActivity(i3);
+		break;	
+	}
+	
+	
+	
+	return super.onOptionsItemSelected(item);
+}
 public void setBbdd(View v){
 	
 	EditText et_codigo = (EditText) findViewById(R.id.editTextCodigo);
