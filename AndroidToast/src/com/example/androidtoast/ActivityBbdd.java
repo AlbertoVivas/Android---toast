@@ -127,6 +127,8 @@ public void setBbdd(View v){
 
 				sqld.execSQL("INSERT INTO Usuarios (codigo,nombre) VALUES" + "(" + codigo + ",'" + nombre + "');");
 				sqld.close();
+				Toast nota = Toast.makeText(getApplicationContext(), "Se ha introducido en la bbdd: "+codigo+" "+nombre, Toast.LENGTH_SHORT);
+				nota.show();
 			}
 		}else{
 			Toast nota = Toast.makeText(getApplicationContext(), "Introduce un nombre y codigo correctos", Toast.LENGTH_SHORT); //al heredar de Activity puedo obtener el contexto.

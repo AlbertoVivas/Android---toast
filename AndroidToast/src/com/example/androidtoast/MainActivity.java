@@ -23,12 +23,9 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-//		Button boton_toast_normal = (Button) findViewById(R.id.toastnorm);
-//		Button boton_toast_gravity = (Button) findViewById(R.id.toastgra); 
-//		Button boton_toast_personalizado = (Button) findViewById(R.id.toastper);
-//		boton_toast_gravity.setOnClickListener(new OnClick());
-//		boton_toast_normal.setOnClickListener(new OnClick());
-//		boton_toast_personalizado.setOnClickListener(new OnClick());
+		
+		ComunicacionBBDDGet mget = new ComunicacionBBDDGet();
+		mget.execute(null,null,null);
 	}
 
 	@Override
