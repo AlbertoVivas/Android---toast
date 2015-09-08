@@ -24,8 +24,10 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		ComunicacionBBDDGet mget = new ComunicacionBBDDGet();
-		mget.execute(null,null,null);
+		//ComunicacionBBDDGet mget = new ComunicacionBBDDGet();
+		//mget.execute(null,null,null);
+		ComunicacionBBDDPost mpos = new ComunicacionBBDDPost();
+		mpos.execute(null,null,null);
 	}
 
 	@Override
