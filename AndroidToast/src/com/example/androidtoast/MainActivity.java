@@ -1,7 +1,10 @@
 package com.example.androidtoast;
 
+
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -44,6 +47,21 @@ public class MainActivity extends Activity {
 		if (id == R.id.action_settings) {
 			return true;
 		}
+		
+		
+		switch (id) {
+		case R.id.action_getBbdd:
+			Intent i1 = new Intent(this,ActivityReadBbdd.class);
+			startActivity(i1);
+			break;
+		case R.id.action_setBbdd:
+			Intent i2 = new Intent(this,ActivityBbdd.class);
+			startActivity(i2);
+			break;	
+		}
+		
+		
+		
 		return super.onOptionsItemSelected(item);
 	}
 	public void Toast(View v){

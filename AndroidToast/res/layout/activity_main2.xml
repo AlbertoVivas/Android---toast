@@ -12,7 +12,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:text="@string/setBbdd" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -22,29 +22,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="94dp"
         android:orientation="vertical" >
-
-        <Button
-            android:id="@+id/toastnorm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Toast Normal" 
-            android:onClick="Toast"
-            />
-
-        <Button
-            android:id="@+id/toastgra"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Toast Gravity" 
-            android:onClick="Toast"/>
-
-        <Button
-            android:id="@+id/toastper"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Toast Personalizado" 
-            android:onClick="Toast"/>
-    </LinearLayout>
+    
 
     <TextView
         android:id="@+id/txtregistro"
@@ -53,6 +31,39 @@
         android:layout_alignLeft="@+id/linearLayout1"
         android:layout_below="@+id/linearLayout1"
         android:layout_marginTop="15dp"
+        android:text="Introducir nombre"
          />
 
+    <EditText
+        android:id="@+id/editTextNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtregistro"
+        android:layout_alignLeft="@+id/button1"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Introducir codigo" />
+
+    <EditText
+        android:id="@+id/editTextCodigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/txtregistro"
+        android:layout_below="@+id/txtregistro"
+        android:layout_marginTop="14dp"
+        android:text="Registrar en bbdd" 
+        android:onClick="setBbdd"/>
+	</LinearLayout>
 </RelativeLayout>

@@ -4,5 +4,8 @@
     <string name="app_name">AndroidToast</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+    <string name="action_setBbdd">Set Bbdd</string>
+    <string name="action_getBbdd">Get Bbdd</string>
+	<string name="setBbdd">Introducir un usuario a la bbdd</string>
+	<string name="getBbdd">Usuarios de la bbdd</string>
 </resources>

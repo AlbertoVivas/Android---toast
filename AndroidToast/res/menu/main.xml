@@ -7,5 +7,16 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/action_settings"/>
+    
+    <item
+        android:id="@+id/action_setBbdd"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_setBbdd"/>
+    <item
+        android:id="@+id/action_getBbdd"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_getBbdd"/>
 
 </menu>

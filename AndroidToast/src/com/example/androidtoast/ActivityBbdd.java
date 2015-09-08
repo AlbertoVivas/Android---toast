@@ -9,7 +9,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * @author Alberto Vivas
@@ -25,8 +28,8 @@ public class ActivityBbdd extends Activity{
 protected void onCreate(Bundle savedInstanceState) {
 	// TODO Auto-generated method stub
 	super.onCreate(savedInstanceState);
-	setContentView(R.layout.activity_main);
-	/*Bbdd bbdd = new Bbdd(this, "bbdd_android", null, 1);
+	setContentView(R.layout.activity_main2);
+	Bbdd bbdd = new Bbdd(this, "bbdd_android", null, 1);
 	
 	SQLiteDatabase sqld =bbdd.getWritableDatabase(); //debemos comprobar que sea !null 
 	String nombre = "user_";
@@ -37,8 +40,8 @@ protected void onCreate(Bundle savedInstanceState) {
 			sqld.execSQL("INSERT INTO Usuarios (codigo,nombre) VALUES"+"("+i+",'"+set_nombre+"');");
 		}
 		sqld.close();
-	}*/
-	
+	}
+	/*
 	TextView txtcontactos = (TextView) findViewById(R.id.textView2);
 	Bbdd usdbh = new Bbdd(this, "bbdd_android", null, 1);
  
@@ -62,7 +65,32 @@ protected void onCreate(Bundle savedInstanceState) {
 	
 	c.close();
 	txtcontactos.setText(datos);
+	*/
 	
+}
+
+public void setBbdd(View v){
 	
+	EditText et_codigo = (EditText) findViewById(R.id.editTextCodigo);
+	EditText et_nombre = (EditText) findViewById(R.id.editTextNombre);
+	
+	String codigo = et_codigo.getText().toString();
+	String nombre = et_nombre.getText().toString();
+	
+	Bbdd bbdd = new Bbdd(this, "bbdd_android", null, 1);
+	
+	SQLiteDatabase sqld =bbdd.getWritableDatabase();
+	
+		if (nombre != "" && codigo != "") {
+
+			if (null != sqld) {
+
+				sqld.execSQL("INSERT INTO Usuarios (codigo,nombre) VALUES" + "(" + codigo + ",'" + nombre + "');");
+				sqld.close();
+			}
+		}else{
+			Toast nota = Toast.makeText(getApplicationContext(), "Introduce un nombre y codigo correctos", Toast.LENGTH_SHORT); //al heredar de Activity puedo obtener el contexto.
+			nota.show();
+		}
 }
 }

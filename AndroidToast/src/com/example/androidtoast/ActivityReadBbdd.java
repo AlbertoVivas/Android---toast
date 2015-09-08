@@ -23,11 +23,12 @@ public class ActivityReadBbdd extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main3);
+		
 		TextView txtcontactos = (TextView) findViewById(R.id.textView2);
-		Bbdd usdbh = new Bbdd(this, "DBUsuarios", null, 1);
+		Bbdd usdbh = new Bbdd(this, "bbdd_android", null, 1);
 	 
-	    SQLiteDatabase db = usdbh.getWritableDatabase();
+	    SQLiteDatabase db = usdbh.getReadableDatabase();
 		
 		Cursor c = db.rawQuery(" SELECT * FROM Usuarios ", null);
 		
@@ -47,7 +48,6 @@ public class ActivityReadBbdd extends Activity {
 		
 		c.close();
 		txtcontactos.setText(datos);
-		
 		
 	}
 

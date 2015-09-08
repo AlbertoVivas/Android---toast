@@ -12,8 +12,8 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
-
+        android:text="@string/action_getBbdd" />
+    
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
@@ -23,36 +23,14 @@
         android:layout_marginTop="94dp"
         android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/toastnorm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Toast Normal" 
-            android:onClick="Toast"
-            />
 
-        <Button
-            android:id="@+id/toastgra"
+        <TextView
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Toast Gravity" 
-            android:onClick="Toast"/>
-
-        <Button
-            android:id="@+id/toastper"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Toast Personalizado" 
-            android:onClick="Toast"/>
+            android:layout_alignBottom="@+id/linearLayout1"
+            android:layout_toLeftOf="@+id/linearLayout1"
+            android:text="TextView" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/txtregistro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/linearLayout1"
-        android:layout_below="@+id/linearLayout1"
-        android:layout_marginTop="15dp"
-         />
 
 </RelativeLayout>
